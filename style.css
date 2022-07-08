@@ -1,0 +1,468 @@
+@import url(https://fonts.googleapis.com/css?family=Be+Vietnam:400,500,700);
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --clr-bg: #fff;
+    --light-gray: hsl(0, 0%, 98%);
+    --ff: 'Be Vietnam';
+    --orange: hsl(12, 88%, 59%);
+    --blue: hsl(228, 39%, 23%);
+    --text: hsl(227, 12%, 61%);
+    --dark-blue: hsl(233, 12%, 13%);
+    --pale-orange: hsl(13, 100%, 96%);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--clr-bg);
+    font-family: var(--ff);
+    color: var(--text);
+    font-size: 16px;
+    padding: 3em 8em;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    color: var(--blue);
+    font-weight: 500;
+}
+
+button {
+    padding: 1em 2em;
+    border: none;
+    background-color: var(--orange);
+    color: var(--pale-orange);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 5em;
+    width: fit-content;
+    box-shadow: 0 0.5em 1em hsla(12, 88%, 59%, 0.5);
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4em auto;
+}
+
+#hero .left {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 50%;
+}
+
+#hero h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.2;
+}
+
+#hero .right img {
+    width: 100%;
+}
+
+#about {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 4em auto;
+}
+
+#about>* {
+    width: 50%;
+}
+
+#about .left {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+#about .left p {
+    max-width: 35ch;
+}
+
+#about h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.2;
+}
+
+#about .right {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    counter-reset: feature;
+    padding-left: 6em;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.feature h3 {
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.2;
+    position: relative;
+}
+
+.feature h3::before {
+    counter-increment: feature;
+
+    content: '0' counter(feature);
+    position: absolute;
+    top: -0.5em;
+    left: -5em;
+    padding: 0.5em 1.5em;
+    border-radius: 1em;
+    width: fit-content;
+    background-color: var(--orange);
+    color: #fff;
+}
+
+#testimonials {
+    margin: 4em -8em 4em;
+    text-align: center;
+    position: relative;
+    overflow-x: scroll;
+    height: 20em;
+    width: 100vw;
+}
+
+#testimonials::-webkit-scrollbar {
+    display: none;
+}
+
+#test_head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#test_head h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.2;
+    top: 10%;
+    text-align: center;
+}
+
+.testimonials {
+    display: flex;
+    position: absolute;
+    bottom: 10%;
+}
+
+.testimonial {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 2em 2em;
+    width: 40vw;
+    background: var(--light-gray);
+    margin-inline: 1em;
+}
+
+.testimonial h4 {
+    font-size: 1em;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1.2;
+    margin-bottom: 2em;
+}
+
+.testimonial img {
+    width: 4em;
+    transform: translateY(-50%);
+}
+
+.dot_wrapper {
+    margin-top: -4em;
+    margin-bottom: 2em;
+}
+
+#cta {
+    display: flex;
+    justify-content: space-between;
+    margin: 4em -8em 0;
+    padding: 4em 8em;
+    background: var(--orange);
+    align-items: center;
+}
+
+#cta h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    width: 70%;
+}
+
+.btn-white {
+    background-color: #fff;
+    color: var(--orange);
+    box-shadow: 0 0 0.5em rgba(255, 255, 255, 0.5);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -8em -8em;
+    padding: 4em 8em;
+    background: var(--dark-blue);
+}
+
+footer .left, footer .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .social_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .center {
+    display: flex;
+    gap: 12em;
+}
+
+footer .center ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    color: #fff;
+    gap: 1em;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+footer .right input {
+    padding: 1em 1em;
+    border: none;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 5em;
+    width: fit-content;
+}
+
+footer .right {
+    text-align: right;
+}
+
+footer .right .up {
+    display: flex;
+    gap: 0.5em;
+}
+
+footer .right .up button {
+    box-shadow: none;
+}
+
+.phone-only {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding: 3em 2em;
+    }
+
+    .phone-only {
+        display: block;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .ham {
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        inset: 0;
+        position: absolute;
+        background: linear-gradient(rgba(255, 255, 255, 0.219), rgba(0, 0, 0, 0.288));
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        margin: 2em;
+        gap: 1.5em;
+        margin-top: -8em;
+        padding: 2em;
+        font-weight: 700;
+        width: 100%;
+        border-radius: 4px;
+    }
+
+    #hero {
+        flex-direction: column-reverse;
+    }
+
+    #hero .left {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hero .left h1 {
+        font-size: 2.5em;
+    }
+
+    #about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4em;
+    }
+
+    #about>* {
+        width: 100%;
+    }
+
+    #about .left {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #about .left h2 {
+        font-size: 2em;
+    }
+
+    #about .left p {
+        max-width: 100%;
+    }
+
+    #about .right {
+        padding-left: 2.5em;
+    }
+
+    #about .right h3 {
+        position: relative;
+        background-color: var(--pale-orange);
+        width: 125%;
+        right: 10%;
+        padding: 0.25em 0 0.25em 1.5em;
+    }
+
+    #about .right h3::before {
+        top: -0.25em;
+        left: -3em;
+    }
+
+    .testimonial {
+        height: 35vh;
+        width: 80vw;
+        padding: 1em;
+        margin-top: 1em;
+        margin-inline: 1em;
+    }
+
+    .testimonial img {
+        margin-top: -1em;
+        z-index: 3;
+    }
+
+    #cta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #cta h2 {
+        margin-bottom: 1em;
+        width: 100%;
+    }
+    footer {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 4em;
+        padding: 4em 2em;
+        margin: -3em -2em;
+    }
+    footer .right, footer .left {
+        width: 100%;
+    }
+    footer .right input {
+        width: 80%;
+        padding-inline: 2em;
+    }
+
+    footer .center {
+        gap: 8em;
+    }
+
+    footer .left{
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+    }
+    footer .left img#logo{
+        width: 12em;
+    }
+    footer .left .social_wrapper {
+        width: 90%;
+    }
+    footer .left .social_wrapper img {
+        width: 2.25em;
+    }
+    .pc-only {
+        display: none;
+    }
+}
